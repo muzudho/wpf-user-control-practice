@@ -7,6 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <!-- 0行2列のグリッド -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 0列目 ボタン -->
+        <StackPanel>
+            <Button Content="Home" Click="HomeButton_Click"/>
+            <Button Content="Sample1" Click="Sample1Button_Click" />
+            <Button Content="Sample2" Click="Sample2Button_Click"  />
+        </StackPanel>
+
+        <!-- 1列目 -->
+        <Frame Name="frame" Grid.Column="1"/>
 
     </Grid>
 </Window>
