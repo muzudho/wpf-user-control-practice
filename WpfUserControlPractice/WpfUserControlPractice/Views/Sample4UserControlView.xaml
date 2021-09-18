@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfUserControlPractice.Views.Sample2UserControlView"
+﻿<UserControl x:Class="WpfUserControlPractice.Views.Sample4UserControlView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,24 +6,34 @@
              xmlns:local="clr-namespace:WpfUserControlPractice.Views"
              mc:Ignorable="d" 
              d:DesignWidth="200" d:DesignHeight="300">
-    
     <!-- ボタンから Windows のルックスを取り除く練習 -->
     <Grid>
         <Label Content="何にもしないページ"/>
 
         <Button Width="100" Height="30"
+                Background="Orchid"
                 Content="何にもしないよ" >
-            
+
             <!-- ボタンのルックスを変えます -->
             <Button.Template>
                 <ControlTemplate>
                     <Grid>
-                        <Ellipse Fill="Orchid"/>
+                        <!-- 楕円の色は、Button.Background プロパティを使うようにします -->
+                        <Ellipse Fill="{TemplateBinding Background}"/>
                     </Grid>
+
+                    <!--
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsPressed" Value="True">
+                            
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                    -->
                 </ControlTemplate>
             </Button.Template>
-            
+
         </Button>
-        
+
     </Grid>
+
 </UserControl>
