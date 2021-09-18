@@ -35,7 +35,8 @@
 
                         <!-- ボタンを押したときに楕円を黄色に変えます -->
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="ellipse"
+                            
+                                <Setter TargetName="ellipse"
                                     Property="Fill"
                                     Value="Yellow"
                                     />
