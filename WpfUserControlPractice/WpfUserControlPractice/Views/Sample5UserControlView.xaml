@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="WpfUserControlPractice.Views.Sample4UserControlView"
+﻿<UserControl x:Class="WpfUserControlPractice.Views.Sample5UserControlView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,6 @@
              xmlns:local="clr-namespace:WpfUserControlPractice.Views"
              mc:Ignorable="d" 
              d:DesignWidth="200" d:DesignHeight="300">
-
     <Grid>
         <Label Content="何にもしないページ"/>
 
@@ -17,13 +16,23 @@
             <Button.Template>
                 <ControlTemplate TargetType="Button">
 
-                    <!-- ニュートラル状態で、Button.Background の色です -->
                     <Ellipse x:Name="ellipse"
                              Fill="{TemplateBinding Background}"/>
 
                     <!-- ここにトリガーを並べてください -->
                     <ControlTemplate.Triggers>
-                        
+
+                        <!--
+                            ボタンにマウスカーソルが被ったときに楕円を青色に変えます。
+                            IsPressed より先に定義しておく必要がある？
+                        -->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ellipse"
+                                    Property="Fill"
+                                    Value="Blue"
+                                    />
+                        </Trigger>
+
                         <!-- ボタンを押したときに楕円を黄色に変えます -->
                         <Trigger Property="IsPressed" Value="True">
                             <Setter TargetName="ellipse"
@@ -31,7 +40,7 @@
                                     Value="Yellow"
                                     />
                         </Trigger>
-                        
+
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Button.Template>

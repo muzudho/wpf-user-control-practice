@@ -39,5 +39,10 @@
         {
             frame.Source = new Uri("./Views/Sample4PageView.xaml", UriKind.Relative);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Source = new Uri("./Views/Sample5PageView.xaml", UriKind.Relative);
+        }
     }
 }

@@ -20,6 +20,7 @@
             <Button Content="Sample2" Click="Sample2Button_Click"  />
             <Button Content="Sample3" Click="Sample3Button_Click"  />
             <Button Content="Sample4" Click="Sample4Button_Click"   />
+            <Button Content="Sample5" Click="Button_Click"    />
         </StackPanel>
 
         <!-- 1列目 -->
